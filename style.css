@@ -1,0 +1,24 @@
+body {
+    background-color: sandybrown;
+    height: 100%;
+}
+
+.body {
+    vh: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+
+}
+
+.nav-bar {
+
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+}
