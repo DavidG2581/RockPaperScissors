@@ -1,24 +1,45 @@
 body {
     background-color: sandybrown;
     height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .body {
-    vh: 100%;
-    padding: 15px;
+    height: 100vh;
+    width: 75%;
+    padding: 0px 50px;
     display: flex;
     flex-direction: column;
 }
 
 .header {
-
+    display: flex;
 }
 
 .nav-bar {
+    background-color: aqua;
+}
 
+.nav-items {
+    display: flex;
 }
 
 .main-content {
     display: flex;
     flex: 1;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
 }
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
