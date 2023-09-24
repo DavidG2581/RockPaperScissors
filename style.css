@@ -27,10 +27,12 @@ body {
 
 .nav-bar {
     background-color: aqua;
+    display: flex;
+    padding: 5px;
 }
 
-.nav-items {
-    display: flex;
+.nav-bar a {
+    margin-left: 10px;
 }
 
 .main-content {
@@ -39,6 +41,11 @@ body {
     background-color: red;
     justify-content: center;
     align-items: center;
+}
+
+.game-button {
+    height: 200px;
+    width: 200px;
 }
 
 .footer {
