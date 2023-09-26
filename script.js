@@ -5,6 +5,12 @@ let choices = ['rock','paper','scissors'];
 
 //UI stuff
 const btns = document.querySelectorAll('.game-btn');
+const message = document.createElement('message');
+message.classList.add('message');
+const options = document.querySelector('#options');
+options.appendChild(message);
+message.textContent = 'Select your choice';
+
 
 btns.forEach((btn) => {btn.addEventListener('click',() => {
     //console.log(btn.textContent);
@@ -33,7 +39,12 @@ function gameOver(){
     alert('GAME OVER')
     console
     btns.forEach((btn) => {btn.disabled = true;});
-    const options = document.querySelector('#options');
+
+    const restart = document.createElement('button');
+    restart.classList.add('restart-btn');
+    restart.textContent='Restart?';
+    restart.addEventListener('click', () => {location = "index.html";});
+    options.appendChild(restart)
 }
 
 let i = 0;
