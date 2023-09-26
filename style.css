@@ -37,15 +37,17 @@ body {
 
 .main-content {
     display: flex;
+    flex-direction: column;
     flex: 1;
     background-color: red;
     justify-content: center;
     align-items: center;
 }
 
-.game-button {
+.game-btn {
     height: 200px;
     width: 200px;
+    border-radius: 15px;
 }
 
 .footer {
