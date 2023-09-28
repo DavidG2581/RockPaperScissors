@@ -1,10 +1,25 @@
 body {
     /* background-color: darkgrey; */
-    background-image: -moz-linear-gradient(white, black);
+    background-image: -moz-linear-gradient(darkgray, black);
     /* height: 100%; */
     display: flex;
     justify-content: center;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+button{
+    display: flex;
+}
+
+img{
+    background-color: transparent;
+}
+
 
 .body {
     padding: 0;
@@ -27,7 +42,7 @@ body {
 }
 
 .nav-bar {
-    background-image: linear-gradient(to right,yellow,silver);
+    background-image: linear-gradient(to right,azure,darkgrey);
     display: flex;
     padding: 5px;
 }
@@ -40,8 +55,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: silver;
-
+    background-color: darkolivegreen;
     align-items: center;
     gap:15px;
 }
@@ -60,7 +74,6 @@ body {
 }
 
 .score {
-    background-color: silver;
     width: 600px;
     height: 100px;
     font-size: 45px;
@@ -82,24 +95,35 @@ body {
     width: auto;
     height: 50px;
     font-size: 25px;
-    background-color: silver;
+    background-color: transparent;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .restart-btn {
     font-size: 30px;
-    background-color: azure;
+    background-image: linear-gradient(90deg, yellow, red);
     height: 200px;
     width: 200px;
     border-radius: 50%;
     padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .game-btn {
+    color: white;
+    background-color: transparent;
     font-size: 30px;
     height: 200px;
     width: 200px;
     border-radius: 15px;
+}
+
+#paper{
+    display: flex;
+    justify-content: center;
+
 }
 
 .footer {
@@ -107,8 +131,4 @@ body {
     justify-content: center;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+

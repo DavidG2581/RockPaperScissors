@@ -15,6 +15,8 @@ const computerScore = document.querySelector('#computerCount');
 const options = document.querySelector('#options');
 const roundInfo = document.createElement('div');
 
+// for adding images to buttons
+
 
 
 //Welcome message
@@ -25,6 +27,20 @@ message.textContent = 'Select your weapon';
 //each click fires a round. External counter instead of using a loop.
 btns.forEach((btn) => {btn.addEventListener('click',() => {
     game(btn);
+})
+});
+
+
+//button highlight when hovering
+btns.forEach((btn) => {btn.addEventListener('mouseover',() => {
+    btn.style.border = "thick solid yellow"; 
+    btn.style.color = "yellow";
+})
+});
+
+btns.forEach((btn) => {btn.addEventListener('mouseout',() => {
+    btn.style.border = ""; 
+    btn.style.color = "";
 })
 });
 
@@ -99,8 +115,8 @@ function game(playersChoice){
             console.log('ERROR');
         }
         i++
-        playerScore.textContent='Player:'+pWins;
-        computerScore.textContent = 'Computer:'+cWins;
+        playerScore.textContent='Player: '+pWins;
+        computerScore.textContent = 'Computer: '+cWins;
     }
     if(i == rounds){
         if (pWins>cWins){
