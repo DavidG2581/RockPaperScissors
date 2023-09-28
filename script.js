@@ -1,22 +1,34 @@
 let choices = ['rock','paper','scissors'];
 
+let rounds = 5;
+let pWins = 0;
+let cWins = 0;
+
 //PUSH UI CHANGES TO RPS-US BRANCH with "git push origin rps-ui"
 
 
 //UI stuff
 const btns = document.querySelectorAll('.game-btn');
 const message = document.createElement('message');
-message.classList.add('message');
+const playerScore = document.querySelector('#playerCount');
+const computerScore = document.querySelector('#computerCount');
 const options = document.querySelector('#options');
+const roundInfo = document.createElement('div');
+
+
+
+//Welcome message
+message.classList.add('message');
 options.appendChild(message);
-message.textContent = 'Select your choice';
+message.textContent = 'Select your weapon';
 
-
+//each click fires a round. External counter instead of using a loop.
 btns.forEach((btn) => {btn.addEventListener('click',() => {
-    //console.log(btn.textContent);
     game(btn);
 })
 });
+
+
 
 //**** VERY IMPORTANT SYNTAX: both forEach() and addEventListener require a callback function or arrow function
 //arrayName.forEach(callbackfunction(item))  
@@ -25,90 +37,82 @@ btns.forEach((btn) => {btn.addEventListener('click',() => {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //game functions
 
-function computerChoice(choices){
-    let x = Math.floor(choices.length * Math.random());
-    //console.log(Math.random())
-    //console.log('choice number is ',x)
-    let choice = choices[x];
-    //console.log('Computer choice is',choice);
-    return choice;
-    
+
+//show weapons chosen for the current round
+function roundInformation(player, comp){
+    roundInfo.classList.add('roundInfo');
+    options.appendChild(roundInfo);
+    roundInfo.textContent = 'Computer\s '+comp+' vs Player\'s '+player;
 }
 
-function gameOver(){
-    alert('GAME OVER')
-    console
-    btns.forEach((btn) => {btn.disabled = true;});
+function computerChoice(choices){
+    let x = Math.floor(choices.length * Math.random());
+    let choice = choices[x];
+    return choice;
+}
 
+function gameOver(messageWinner){
+    options.removeChild(roundInfo);
+    btns.forEach((btn) => {btn.disabled = true;});
     const restart = document.createElement('button');
     restart.classList.add('restart-btn');
     restart.textContent='Restart?';
     restart.addEventListener('click', () => {location = "index.html";});
     options.appendChild(restart)
+    message.textContent ='GAME OVER!!!\n'+messageWinner;
 }
 
 let i = 0;
-function game(playersChoice){
-
-    let rounds = 5;
-    let pWins = 0;
-    let cWins = 0;
-    
+function game(playersChoice){    
     if (i<rounds){
-        console.log('ROUND',i+1)
         let comp = computerChoice(choices);
         let player = playersChoice.id;
-        console.log('Computer:',comp,'vs Player:',player);
+        roundInformation(player, comp);
+        message.textContent='Round '+(i+1);
         if (player == comp){
-            console.log('It\'s a tie!')
-            //continue
         }
         else if (player=='rock'){
             if (comp=='paper'){
                 cWins++;
-                console.log('Computer wins');
             }
             else if (comp=='scissors'){
                 pWins++;
-                console.log('Player wins');
             } 
             else{console.log('ERROR');}
 
         }else if (player =='paper'){
             if (comp=='scissors'){
                 cWins++;
-                console.log('Computer wins');
             }
             else if (comp=='rock'){
                 pWins++;
-                console.log('Player wins');
             } 
             else{console.log('ERROR');}
         }else if (player=='scissors'){
             if (comp=='rock'){
                 cWins++;
-                console.log('Computer wins');
             }
             else if (comp=='paper'){
                 pWins++;
-                console.log('Player wins');
             }
         }else {
             console.log('ERROR');
         }
         i++
+        playerScore.textContent='Player:'+pWins;
+        computerScore.textContent = 'Computer:'+cWins;
     }
     if(i == rounds){
         if (pWins>cWins){
-            console.log('Winner is player!!!');
+            gameOver('Winner is player!!!');
         }else if (pWins<cWins){
-            console.log('Winner is computer!!!');
+            gameOver('Winner is computer!!!');
         }else if (pWins==cWins){
-            console.log('It\s a tie. Nobody wins...');
+            gameOver('It\s a tie. Nobody wins...');
         }else{
-            console.log('There is a disturbance in the force');
+            gameOver('There is a disturbance in the force');
         }
-        gameOver();
+        //gameOver();
         
     }
 }

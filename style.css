@@ -1,6 +1,7 @@
 body {
-    background-color: sandybrown;
-    height: 100%;
+    /* background-color: darkgrey; */
+    background-image: -moz-linear-gradient(white, black);
+    /* height: 100%; */
     display: flex;
     justify-content: center;
 }
@@ -26,7 +27,7 @@ body {
 }
 
 .nav-bar {
-    background-color: aqua;
+    background-image: linear-gradient(to right,yellow,silver);
     display: flex;
     padding: 5px;
 }
@@ -39,9 +40,10 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: red;
-    justify-content: center;
+    background-color: silver;
+
     align-items: center;
+    gap:15px;
 }
 
 #options {
@@ -57,12 +59,39 @@ body {
     padding: 30px;
 }
 
+.score {
+    background-color: silver;
+    width: 600px;
+    height: 100px;
+    font-size: 45px;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    margin-top:50px;
+    display: flex;
+    gap: 15px;
+}
+
+.roundInfo {
+    width: auto;
+    height: 50px;
+    font-size: 25px;
+    background-color: silver;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .restart-btn {
     font-size: 30px;
     background-color: azure;
     height: 200px;
     width: 200px;
-    border-radius: 15px;
+    border-radius: 50%;
     padding: 30px;
 }
 
@@ -75,7 +104,7 @@ body {
 
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 ul {
