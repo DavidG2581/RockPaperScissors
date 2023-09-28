@@ -80,7 +80,7 @@ function gameOver(messageWinner){
 
 let i = 0;
 function game(playersChoice){    
-    if (i<rounds){
+    if ((pWins<5)||(cWins<5)){
         let comp = computerChoice(choices);
         let player = playersChoice.id;
         roundInformation(player, comp);
@@ -118,7 +118,7 @@ function game(playersChoice){
         playerScore.textContent='Player: '+pWins;
         computerScore.textContent = 'Computer: '+cWins;
     }
-    if(i == rounds){
+    if((pWins == 5)||(cWins == 5)){
         if (pWins>cWins){
             gameOver('Winner is player!!!');
         }else if (pWins<cWins){

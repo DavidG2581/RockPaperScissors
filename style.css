@@ -1,6 +1,9 @@
 body {
     /* background-color: darkgrey; */
-    background-image: -moz-linear-gradient(darkgray, black);
+    background-image: url(./img/background.jpg);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    /* background-position: center center;  */
     /* height: 100%; */
     display: flex;
     justify-content: center;
@@ -55,7 +58,7 @@ img{
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: darkolivegreen;
+    background-color: rgba(214, 214, 214, 0.5);
     align-items: center;
     gap:15px;
 }
